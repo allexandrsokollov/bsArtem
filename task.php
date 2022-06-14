@@ -31,6 +31,14 @@ if (isset($_POST['question'])) {
     var wordLength = getCookie("word").toString().length;
     var unveiledLettersAndStars = new Array(wordLength);
 
+    var question = getCookie("question").toString();
+
+    for (let i = 0; i < question.length; i++) {
+        if (question[i] === "+") {
+            question[i] = " ";
+        }
+    }
+
     var bids = 0;
 
     var word = new Array(wordLength);
