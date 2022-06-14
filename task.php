@@ -174,7 +174,7 @@ if (isset($_POST['question'])) {
     </div>
     <script>
         document.getElementById("word").innerHTML = unveiledLettersAndStars.toString();
-        document.getElementById("question").innerHTML = getCookie("question");
+        document.getElementById("question").innerHTML = question;
     </script>
 
 
