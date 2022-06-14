@@ -33,11 +33,6 @@ if (isset($_POST['question'])) {
 
     var question = getCookie("question").toString();
 
-    for (let i = 0; i < question.length; i++) {
-        if (question[i] === "+") {
-            question[i] = " ";
-        }
-    }
 
     var bids = 0;
 
@@ -174,7 +169,16 @@ if (isset($_POST['question'])) {
     </div>
     <script>
         document.getElementById("word").innerHTML = unveiledLettersAndStars.toString();
-        document.getElementById("question").innerHTML = question;
+
+        var tempStr = " ";
+        for (let i = 0; i < question.length; i++) {
+            if (question[i] === "+") {
+                tempStr += " ";
+            } else {
+                tempStr += question[i];
+            }
+        }
+        document.getElementById("question").innerHTML = tempStr;
     </script>
 
 
